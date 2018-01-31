@@ -20,7 +20,7 @@ const server=http.createServer(function(request,response){
             if(error){
                      
                 response.statusCode = 404;
-                response.end("Ресурс не найден!");
+                response.end("Not exist!");
             }   
             else{
                 response.end(data);
