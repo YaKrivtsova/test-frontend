@@ -4,7 +4,7 @@ const server=http.createServer(function(request,response){
 if (request.url==='/'){
 const text=fs.readFileSync('index.html','utf8');
 response.end(text);
-}
+};
 //else{
 //const text=fs.readFileSync('index.html','utf8');
 //response.end(text);}
