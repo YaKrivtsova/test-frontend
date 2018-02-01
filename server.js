@@ -14,7 +14,7 @@ const server=http.createServer(function(request,response){
     if(request.url.startsWith("/")){
          
         // получаем путь после слеша
-        var filePath = request.url.substr(1);
+        var filePath = request.url;
         fs.readFile(filePath, function(error, data){
                  
             if(error){
