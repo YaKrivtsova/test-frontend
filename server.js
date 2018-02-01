@@ -20,7 +20,7 @@ const server=http.createServer(function(request,response){
             if(error){
                      
                 response.statusCode = 404;
-                response.end("Not exist!");
+                response.end(filePath);
             }   
             else{
                 response.end(data);
