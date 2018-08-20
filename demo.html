@@ -83,7 +83,20 @@
 </head>
 <body>
   <div class="wrap">
-    <a href="#" onclick="javascript:cal_single.download('Awesome Day')">Single Event</a>
+    <a href="#" onclick="javascript:cal_single.download(var buildICSEntry = function (javascriptExampleDateObject) {
+
+	var calEntry = icsFormatter();
+
+	var title = 'sometitlestring';
+	var place = 'our secret meeting place';
+	var begin = new Date(javascriptExampleDateObject);
+	var end = new Date(Beginn.getTime() + 30*60000);
+
+	var description = 'A very long and boring description of what is the agenda of this super exclusiv pow-wow';
+
+	calEntry.addEvent(title,description, place, begin.toUTCString(), begin.toUTCString());
+	calEntry.download('ourSecretMeeting');
+})">Single Event</a>
     <br>
     <a href="#" onclick="javascript:cal.download('Holidays')">Multiple Events</a>
     <br>
