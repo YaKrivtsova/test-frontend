@@ -13,6 +13,6 @@
     
 var icsMSG="BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//hacksw/handcal//NONSGML v1.0//EN\nBEGIN:VEVENT\nUID:user@mail.ru\nDTSTAMP:20131231T220000Z\nORGANIZER;CN=Yana:MAILTO:moidrug@mail.ru\nDTSTART:" + msgData1 +"\nDTEND:" + msgData2 +"\nSUMMARY:It is work\nEND:VEVENT\nEND:VCALENDAR"
     $('.test').click(function(){
-        window.open( "data:text/calendar;charset=utf8," icsMSG);
+        window.open( "data:text/calendar;charset=utf8," +escape(icsMSG));
     });
 </script>
