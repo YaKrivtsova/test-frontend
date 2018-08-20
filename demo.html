@@ -52,19 +52,35 @@
 
 </head>
 <script src="ics.js"></script> 
-<script src="FileSaver.js"></script>
 <body>
   <form id="form1" runat="server">
         <div>
             <script>
-                function download() {
+                function downloadics() {
                     var cal = ics();
                     cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');
                     cal.addEvent('Demo Event', 'This is thirty minute event', 'Nome, AK', '8/7/2013 5:30 pm', '8/7/2013 6:00 pm');
-                    cal.download();
+                    cal.download(cal,'test','text/calendar');
                 }	
+              function download(data, filename, type) {
+    var file = new Blob([data], {type: type});
+    if (window.navigator.msSaveOrOpenBlob) // IE10+
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else { // Others
+        var a = document.createElement("a"),
+                url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+        }, 0); 
+    }
+}
             </script>            
-            <input id="Button1" type="button" value="button" onclick="download();" />
+            <input id="Button1" type="button" value="button" onclick="downloadics();" />
         </div>
     </form>
 </html>
