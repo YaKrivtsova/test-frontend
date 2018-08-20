@@ -57,10 +57,10 @@
         <div>
             <script>
                 function downloadics() {
-                    var cal = ics();
-                    cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');
-                    cal.addEvent('Demo Event', 'This is thirty minute event', 'Nome, AK', '8/7/2013 5:30 pm', '8/7/2013 6:00 pm');
-                    downloadfile(cal,'test','text/calendar');
+                   
+                    cal_single = ics();
+                    cal_single.addEvent('Best Day', 'This is the best day to demonstrate a single event.', 'New York', '11/12/1987', '11/12/1987')
+                    downloadfile(cal_single,'test','text/calendar');
                 }	
               function downloadfile(data, filename, type) {
     var file = new Blob([data], {type: type});
