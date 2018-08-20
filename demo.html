@@ -60,9 +60,9 @@
                     var cal = ics();
                     cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');
                     cal.addEvent('Demo Event', 'This is thirty minute event', 'Nome, AK', '8/7/2013 5:30 pm', '8/7/2013 6:00 pm');
-                    cal.download(cal,'test','text/calendar');
+                    cal.downloadfile(cal,'test','text/calendar');
                 }	
-              function download(data, filename, type) {
+              function downloadfile(data, filename, type) {
     var file = new Blob([data], {type: type});
     if (window.navigator.msSaveOrOpenBlob) // IE10+
         window.navigator.msSaveOrOpenBlob(file, filename);
