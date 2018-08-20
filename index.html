@@ -1,17 +1,17 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-<div class="start-time">9:30am</div>
-<div class="end-time">10:30am</div>
-<div class="Location">California</div>
+<div class="start-time" style="display:none">9:30am</div>
+<div class="end-time"style="display:none">10:30am</div>
+<div class="Location"style="display:none">California</div>
 <button class="test">Click me!</button>
 <script>
   msgData1 = $('.start-time').text();
     msgData2 = $('.end-time').text();
     msgData3 = $('.Location').text();
-
+var icsMSG="BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//www.marudot.com//iCal Event Maker\r\nX-WR-CALNAME:jjhj\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Moscow\r\nTZURL:http://tzurl.org/zoneinfo-outlook/Europe/Moscow\r\nX-LIC-LOCATION:Europe/Moscow\r\nBEGIN:STANDARD\r\nTZOFFSETFROM:+0300\r\nTZOFFSETTO:+0300\r\nTZNAME:MSK\r\nDTSTART:19700101T000000\r\nEND:STANDARD\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nDTSTAMP:20180820T123936Z\r\nUID:20180820T123936Z-250245732@marudot.com\r\nDTSTART;TZID="Europe/Moscow":20180820T120000\r\nDTEND;TZID="Europe/Moscow":20180820T120000\r\nSUMMARY:uj\r\nEND:VEVENT\r\nEND:VCALENDAR";
     
-var icsMSG="BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//hacksw/handcal//NONSGML v1.0//EN\nBEGIN:VEVENT\nUID:user@mail.ru\nDTSTAMP:20131231T220000Z\nORGANIZER;CN=Yana:MAILTO:moidrug@mail.ru\nDTSTART:" + msgData1 +"\nDTEND:" + msgData2 +"\nSUMMARY:It is work\nEND:VEVENT\nEND:VCALENDAR"
+//var icsMSG="BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//hacksw/handcal//NONSGML v1.0//EN\nBEGIN:VEVENT\nUID:user@mail.ru\nDTSTAMP:20131231T220000Z\nORGANIZER;CN=Yana:MAILTO:moidrug@mail.ru\nDTSTART:" + msgData1 +"\nDTEND:" + msgData2 +"\nSUMMARY:It is work\nEND:VEVENT\nEND:VCALENDAR"
  console.log(icsMSG)  ;
 $('.test').click(function(){
         window.open( "data:text/calendar;charset=utf8," +escape(icsMSG));
