@@ -8,7 +8,7 @@
     <title>Yakipedia</title>
 </head>
 <body>
-    <div>
+  /*  <div>
         <ul class="menu">
             <a href="forfun.html">
                 <li>For fun</li>
@@ -29,6 +29,41 @@
         <footer>
             <p>&copy; 2018 г.</p>
         </footer>
-    </div>
+    </div>*/
+     <form action="https://client.uralairlines.ru/PurposeFlying/PurposeFlyingAction" style="width:600px; margin:auto">
+        <h4 style="text-align: center;">Выберете по каким целям вы чаще путеществуете:</h4>
+                        <input type="text" name="customer_id" style="display:none" value="${CUSTOMER_ID_}" />
+        <table style="margin-top:20px">
+            <tr>
+                <td>
+                    <label class="minWidth">
+                        <img style="width: 100px;" src="https://thumbs.dreamstime.com/b/%D0%B7%D0%BD%D0%B0%D1%87%D0%BE%D0%BA-%D0%BF-%D1%8F%D0%B6%D0%B0-%D0%B8-%D0%BF%D0%B0-%D1%8C%D0%BC%D1%8B-%D1%81%D0%B5%D1%80-%D1%86%D0%B0-%D1%84%D0%BE%D1%80%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D1%82%D1%80%D0%BE%D0%BF%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-79527486.jpg" />   <input type="radio" checked="checked" name="answer" value="otpusk"> отдых, пляж
+                        <span class="checkmark"></span>
+                    </label>
+                </td>
+                <td>
+                    <label class="minWidth">
+                        <img style="width:100px;" src="http://english-language-club.ru/wp-content/uploads/2017/06/bi.png" /> <input type="radio" name="answer" value="bisnes"> бизнес поездка
+                        <span class="checkmark"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="minWidth">
+                        <img style="width:100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Sport_balls.svg/2000px-Sport_balls.svg.png" />  <input type="radio" name="answer" value="sport"> спортивные мероприятия
+                        <span class="checkmark"></span>
+                    </label>
+                </td>
+                <td>
+                    <label class="minWidth">
+                        <img style="width:100px" src="http://sch1022.mskobr.ru/files/%D0%AD%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%2C%20%D0%BA%D1%80%D0%B0%D0%B5%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%2C%20%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%BC/%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D1%81.png" />    <input type="radio" name="answer" value="turism"> туризм, экскурсии
+                        <span class="checkmark"></span>
+                    </label>
+                </td>
+            </tr>
+        </table>
+                            <input type="submit" value="Отправить">
+    </form>
 </body>
 </html>
