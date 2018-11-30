@@ -4,10 +4,72 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!--<link rel="stylesheet" type="text/css" href="/style.css">-->
     <title>Blob by KYV</title>
+	<style>
+	.header{
+	 height:45px;
+	}
+	header{
+	height:55px;
+	width:100%;
+	background-color: #e8d4cb;
+	}
+	
+.wrapper {
+  position: absolute;
+  top: 50%;
+  width: 90%;
+  left: 5%;
+  margin-top: -87.5px;
+  font-size: 50px;
+  height: 175px;
+}
+@font-face {
+    font-family: Clarisa; 
+    src: url(Clarissa.ttf); /* Путь к файлу со шрифтом */
+   }
+.wave {
+  color: black;
+  animation: 0.5s color infinite;
+  font-family: Clarisa;
+  
+  
+}
+	</style>
 </head>
-<body style="background-color:#f3efe9">
- It is my fisty blog!
+<body style="background-color:#f3efe9; margin:0px">
+<header>
+<img class="header" src="logo.png" alt="" style="margin: 2px 2px;"/>
+<img class="header" src="photo.png" alt="" style="margin: 2px 3px; float:right; border-left: 2px solid #0000005c;padding-left: 2px;"/>
+<img class="header" src="traning.png" alt="" style="margin: 2px 2px; float:right; border-left: 2px solid #0000005c;padding-left: 2px;"/>
+<img class="header" src="notes.png" alt="" style="margin: 2px 2px; float:right; border-left: 2px solid #0000005c;padding-left: 2px;"/>
+<img class="header" src="treasurechest.png" alt="" style="margin: 2px 2px; float:right;"/>
+</header>
+<div class="wrapper">
+  <p class="text">Hello! It is my little world! Welcome!</p>
+</div>
 </body>
 </html>
+<script>
+var wrapper = document.querySelector(".wrapper");
+var text = document.querySelector(".text");
+
+var textCont = text.textContent;
+text.style.display = "none";
+
+for (var i = 0; i < textCont.length; i++) {
+  (function(i) {
+    setTimeout(function() {
+      // Created textNode to append
+      var texts = document.createTextNode(textCont[i])
+      var span = document.createElement('span');
+      span.appendChild(texts);
+
+      span.classList.add("wave");
+      wrapper.appendChild(span);
+
+    }, 75 * i);
+  }(i));
+}
+</script>
