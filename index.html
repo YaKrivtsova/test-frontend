@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel="stylesheet" type="text/css" href="style/style.css">-->
+	<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
     <title>Blob by KYV</title>
 	<style>
 	.header{
@@ -16,13 +18,13 @@
 	background-color: #e8d4cb;
 	}
 	
-.wrapper {
+.wrapper,.wrapper2 {
   position: absolute;
-  top: 50%;
+  top: 40%;
   width: 90%;
-  left: 5%;
+  left: 10%;
   margin-top: -87.5px;
-  font-size: 50px;
+  font-size: 70px;
   height: 175px;
 }
 @font-face {
@@ -47,7 +49,10 @@
 <img class="header" src="img/treasurechest.png" alt="" style="margin: 2px 2px; float:right;"/>
 </header>
 <div class="wrapper">
-  <p class="text">Hello! It is my little world! Welcome!</p>
+  <p class="text">Hello! It is my little world!</p>
+</div>
+<div class="wrapper2" style="display:none">
+  <p class="text2 wave">Welcome!</p>
 </div>
 </body>
 </html>
@@ -72,4 +77,8 @@ for (var i = 0; i < textCont.length; i++) {
     }, 75 * i);
   }(i));
 }
+ 
+        setTimeout(function(){$('.wrapper').fadeOut();
+		$('.wrapper2').fadeIn()}, 5000); 
+  
 </script>
