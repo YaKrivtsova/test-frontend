@@ -7,18 +7,81 @@
     <!--<link rel="stylesheet" type="text/css" href="style/style.css">-->
 	<script src="js/jquery-3.3.1.min.js"></script>
     <title>The Digital Shift Pte Ltd</title>
+<style>
+.header_img{ 
 
+       height: 230px;
+    background-image: url(img/header_img.jpg);
+    background-color: #c7b39b;
+    background-repeat: round;
+
+   }
+@font-face {
+    font-family: Ahronbd; 
+    src: url(style/ahronbd.ttf); /* Путь к файлу со шрифтом */
+   }
+@font-face {
+    font-family:Albertus; 
+    src: url(style/Albertus.ttf); /* Путь к файлу со шрифтом */
+   }
+.text_box{
+color:#1b3f6f;
+font-size:59px;
+padding-top:3%;
+padding-left: 3%;
+font-family: Ahronbd;
+}
+.nav{
+font-size:15px;
+font-family: Albertus;
+height:40PX;
+background-color:rgba(115, 207, 244, 1)
+}
+ul.navs {
+display: flex;
+  list-style: none; /*убираем маркеры списка*/
+  margin: 0; /*убираем верхнее и нижнее поле, равное 1em*/
+  padding-left: 0; /*убираем левый отступ, равный 40px*/
+}
+a {text-decoration: none;} 
+li.navs {flex-basis: auto;
+  flex-grow: 1;
+padding-top: 10px;
+    text-align: center;}
+#content{margin-left: 8%; margin-top:2%;font-family: Albertus;position: relative; font-size:18px;}
+</style>
 </head>
 <body style="margin:0">
 <header>
-<img src="img/header_img.jpg" alt=""/>
+<div class="header_img"><div class="text_box">The Digital Shift Pte Ltd</div></div>
+<div class="nav">
+<ul class="navs">
+<li class="navs"><a href="">Our company</a></li>
+<li class="navs"><a href="">Prices</a></li>
+<li class="navs"><a href="">Products</a></li>
+<li class="navs"><a href="">Services</a></li>
+<li class="navs"><a href="">Contacts</a></li>
+</ul>
+</div>
 </header>
-<div>
- 
+
+<div id="content">
+<div style="width: 40%;position: absolute; ">
+ <strong>The Digital Shift Pte Ltd</strong> is an experienced independent distributor. 
+Specialization of the company:
+<ul>
+<li>Professional delivery of electronic components</li>
+<li>Agency services in Asia</li>
+<li>Search and verification of suppliers</li>
+<li>Cargo consolidation</li>
+</ul>
 </div>
-<div>
-  
+<div style="width: 37%;position: absolute;     right: 14%;">
+Our company has a wide network connection with many manufacturers. Together with our well-established supply chain system, skilled customer service teams, we are ready to constantly support our customers
+
 </div>
+</div>
+
 </body>
 </html>
 
