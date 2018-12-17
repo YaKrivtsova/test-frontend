@@ -19,37 +19,6 @@
 <a href="notes.html"><img class="header" src="img/notes.png" alt="" style="margin: 2px 2px; float:right; border-left: 2px solid #0000005c;padding-left: 2px;"/></a>
 <a href="treasurechest.html"><img class="header" src="img/treasurechest.png" alt="" style="margin: 2px 2px; float:right;"/></a>
 </header>
-<div class="wrapper">
-  <p class="text">Hello! It is my little world!</p>
-</div>
-<div class="wrapper2" style="display:none">
-  <p class="text2 wave">Welcome!</p>
-</div>
+treasurechest
 </body>
 </html>
-<script>
-var wrapper = document.querySelector(".wrapper");
-var text = document.querySelector(".text");
-
-var textCont = text.textContent;
-text.style.display = "none";
-
-for (var i = 0; i < textCont.length; i++) {
-  (function(i) {
-    setTimeout(function() {
-      // Created textNode to append
-      var texts = document.createTextNode(textCont[i])
-      var span = document.createElement('span');
-      span.appendChild(texts);
-
-      span.classList.add("wave");
-      wrapper.appendChild(span);
-
-    }, 75 * i);
-  }(i));
-}
- 
-        setTimeout(function(){$('.wrapper').fadeOut();
-		$('.wrapper2').fadeIn()}, 5000); 
-  
-</script>

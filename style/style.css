@@ -1,4 +1,29 @@
-
-body{
-      background-color: #f7f3e9;
+.header{
+	 height:45px;
+	}
+	header{
+	height:55px;
+	width:100%;
+	background-color: #e8d4cb;
+	}
+	
+.wrapper,.wrapper2 {
+  position: absolute;
+  top: 40%;
+  width: 90%;
+  left: 10%;
+  margin-top: -87.5px;
+  font-size: 70px;
+  height: 175px;
+}
+@font-face {
+    font-family: Clarisa; 
+    src: url(Clarissa.ttf); /* ֿףעü ך פאיכף סמ רנטפעמל */
+   }
+.wave {
+  color: black;
+  animation: 0.5s color infinite;
+  font-family: Clarisa;
+  
+  
 }
