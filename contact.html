@@ -8,6 +8,23 @@
 	<script src="js/jquery-3.3.1.min.js"></script>
     <title>Blog by KYV</title>
 	<style>
+    td select,
+    td input {
+      width: 150px;
+    }
+
+    label {
+      display: block;
+    }
+
+    .error input,
+    .error textarea {
+      border: 1px solid red;
+    }
+
+    .error {
+      color: red;
+    }
 .header_img{ 
 
        height: 230px;
@@ -48,7 +65,7 @@ li.navs {flex-basis: auto;
   flex-grow: 1;
 padding-top: 10px;
     text-align: center;}
-#content{margin-left: 8%; margin-top:2%;font-family: Albertus;position: relative; font-size:18px;}
+#content{margin-left: 8%; margin-top:5%;font-family: Albertus;position: relative; font-size:18px;}
 </style>
 </head>
 <body style="margin:0">
@@ -66,46 +83,71 @@ padding-top: 10px;
 </header>
 
 <div id="content">
-<div style="width: 40%;position: absolute; ">
- <strong>The Digital Shift Pte Ltd</strong> is an experienced independent distributor. 
-Specialization of the company:
-<ul>
-<li>Professional delivery of electronic components</li>
-<li>Agency services in Asia</li>
-<li>Search and verification of suppliers</li>
-<li>Cargo consolidation</li>
-</ul>
-</div>
+<strong style="width: 40%;position: absolute; "><pre>
+Name: The Digital Shift Pte Ltd
+Reg. No.: 201614000H
+Address : 1 George Street, #10-01, Singapore 049145
+Incorporated: 24/05/2016
+</pre>
+<hr style="border: 1px solid black;">
+<pre>
+Contact: Shuangqun  Yan
+Mobile: +86-13738400100
+</pre>
+</strong>
 <div style="width: 37%;position: absolute;     right: 14%;">
-Our company has a wide network connection with many manufacturers. Together with our well-established supply chain system, skilled customer service teams, we are ready to constantly support our customers
+<form>
+    <table>
+      <tr>
+        <td>From</td>
+        <td>
+          <input name="from" type="text">
+        </td>
+      </tr>
+    </table>
 
+    Message:
+    <label>
+      <textarea name="message" style="display:block;width:400px;height:80px"></textarea>
+    </label>
+
+    <input type="button" onclick="validate(this.form)" value="Send">
+  </form>
 </div>
 </div>
 </body>
 </html>
-<script>
-var wrapper = document.querySelector(".wrapper");
-var text = document.querySelector(".text");
+  <script>
+    function showError(container, errorMessage) {
+      container.className = 'error';
+      var msgElem = document.createElement('span');
+      msgElem.className = "error-message";
+      msgElem.innerHTML = errorMessage;
+      container.appendChild(msgElem);
+    }
 
-var textCont = text.textContent;
-text.style.display = "none";
+    function resetError(container) {
+      container.className = '';
+      if (container.lastChild.className == "error-message") {
+        container.removeChild(container.lastChild);
+      }
+    }
 
-for (var i = 0; i < textCont.length; i++) {
-  (function(i) {
-    setTimeout(function() {
-      // Created textNode to append
-      var texts = document.createTextNode(textCont[i])
-      var span = document.createElement('span');
-      span.appendChild(texts);
+    function validate(form) {
+      var elems = form.elements;
+console.log(elems);
+      resetError(elems.from.parentNode);
+      if (!elems.from.value) {
+        showError(elems.from.parentNode, 'Specify the sender.');
+      }
 
-      span.classList.add("wave");
-      wrapper.appendChild(span);
+     
 
-    }, 75 * i);
-  }(i));
-}
- 
-        setTimeout(function(){$('.wrapper').fadeOut();
-		$('.wrapper2').fadeIn()}, 5000); 
-  
-</script>
+      resetError(elems.message.parentNode);
+      if (!elems.message.value) {
+        showError(elems.message.parentNode, 'Specify text message');
+      }
+
+    }
+  </script>
+
