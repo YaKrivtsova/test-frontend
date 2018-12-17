@@ -8,6 +8,23 @@
 	<script src="js/jquery-3.3.1.min.js"></script>
     <title>Blog by KYV</title>
 	<style>
+    td select,
+    td input {
+      width: 150px;
+    }
+
+    label {
+      display: block;
+    }
+
+    .error input,
+    .error textarea {
+      border: 1px solid red;
+    }
+
+    .error {
+      color: red;
+    }
 .header_img{ 
 
        height: 230px;
@@ -48,7 +65,7 @@ li.navs {flex-basis: auto;
   flex-grow: 1;
 padding-top: 10px;
     text-align: center;}
-#content{margin-left: 8%; margin-top:2%;font-family: Albertus;position: relative; font-size:18px;}
+#content{margin-left: 16%; margin-top:3%;font-family: Albertus;position: relative; font-size:18px;}
 </style>
 </head>
 <body style="margin:0">
@@ -59,7 +76,7 @@ padding-top: 10px;
 <li class="navs"><a href="index2.html">Our company</a></li>
 <li class="navs"><a href="prices.html">Prices</a></li>
 <li class="navs"><a href="product.html">Products</a></li>
-<li class="navs"><a href="services.html">Services</a></li>
+<li class="navs"><a href="">Services</a></li>
 <li class="navs"><a href="contact.html">Contacts</a></li>
 </ul>
 </div>
@@ -67,45 +84,15 @@ padding-top: 10px;
 
 <div id="content">
 <div style="width: 40%;position: absolute; ">
- <strong>The Digital Shift Pte Ltd</strong> is an experienced independent distributor. 
-Specialization of the company:
-<ul>
-<li>Professional delivery of electronic components</li>
-<li>Agency services in Asia</li>
-<li>Search and verification of suppliers</li>
-<li>Cargo consolidation</li>
-</ul>
+<u>Transportation services.</u><br><br>
+Digital Shift Pte Ltd uses all modes of transport, providing services for the transportation of cargo from the manufacturer to the final buyer.
 </div>
 <div style="width: 37%;position: absolute;     right: 14%;">
-Our company has a wide network connection with many manufacturers. Together with our well-established supply chain system, skilled customer service teams, we are ready to constantly support our customers
+<u>Logistics services.</u><br><br>
+Organization of the logistics supply chains for the delivery of the cargo from manufacturer to the end-customer Efficient coordination and cargo movement monitoring.
 
 </div>
 </div>
 </body>
 </html>
-<script>
-var wrapper = document.querySelector(".wrapper");
-var text = document.querySelector(".text");
-
-var textCont = text.textContent;
-text.style.display = "none";
-
-for (var i = 0; i < textCont.length; i++) {
-  (function(i) {
-    setTimeout(function() {
-      // Created textNode to append
-      var texts = document.createTextNode(textCont[i])
-      var span = document.createElement('span');
-      span.appendChild(texts);
-
-      span.classList.add("wave");
-      wrapper.appendChild(span);
-
-    }, 75 * i);
-  }(i));
-}
- 
-        setTimeout(function(){$('.wrapper').fadeOut();
-		$('.wrapper2').fadeIn()}, 5000); 
   
-</script>
