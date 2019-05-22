@@ -9,6 +9,27 @@
     <title>Oceanic Trading (Asia) Limited</title>
 	<script src="https://smtpjs.com/v2/smtp.js"></script>
 	<script>
+	function valid()
+	{
+		var validMess=$("#validMess");
+		var countNotValidField=0;
+		var allValidField=document.getElementsByClassName("NeedValid");
+		for(var i=0;i<allValidField.length;i++){
+		console.log(country=$("#cct option:selected").text());
+		if(allValidField[i].value==""){ allValidField[i].classList.add('notValid'); countNotValidField++;}
+		else{  allValidField[i].classList.remove('notValid') }
+		
+		}
+		if(!document.forms["contact_form"].elements["cGender_1"].checked&!document.forms["contact_form"].elements["cGender_0"].checked)
+		{ countNotValidField++;
+		$("#textGen")[0].classList.add('notValid')
+		}
+		if(country=$("#cct option:selected").text()=="select a country") countNotValidField++;
+		else $("#cct option:selected").classList.remove('notValid');
+		if(countNotValidField>0)validMess[0].style.cssText = "display:block";
+		
+		
+	}
 	function sendEmail() {
 	var name=document.forms["contact_form"].elements["cname"].value;
 	if(document.forms["contact_form"].elements["cGender_1"].checked)
@@ -66,6 +87,10 @@
    input[type="text"],textarea{
        width: 200px;
 
+   }
+   .notValid{
+   border-color: red;
+   color:red;
    }
 @font-face {
     font-family: Ahronbd; 
@@ -174,20 +199,21 @@ padding-top: 10px;
 <div style="margin-left: 20%;">Phone number +852XXXXXXXX</div> <br>
 <div style="margin-left: 20%;">Quote request form :
 <form name="contact_form" >
+
 <table class="if-news-table" style="position:inherit; margin-top:-30px;margin-left: 220px;">
 				<tbody>
 				<tr>
 					<td width="170"><label for="cname">Full Name*</label></td>
-					<td width="443"><input type="text" name="name" id="cname"></td>
+					<td width="443"><input type="text" name="name" id="cname" class="NeedValid"></td>
 				</tr>
 				<tr>
-					<td>Gender*</td>
+					<td id="textGen">Gender*</td>
 					<td><p>
 						<label>
-							<input type="radio" name="sex" value="0" id="cGender_0">
+							<input type="radio" name="sex" value="0" id="cGender_0"class="NeedValid">
 							Male</label>
 						<label>
-							<input type="radio" name="sex" value="1" id="cGender_1">
+							<input type="radio" name="sex" value="1" id="cGender_1"class="NeedValid">
 							Female</label>
 						<br>
 					</p></td>
@@ -200,44 +226,44 @@ padding-top: 10px;
 				<tr>
 					<td><label for="cCom">Company Name*</label>&nbsp;</td>
 					<td><p>
-					<input type="text" name="company" id="cCom"></p></td>
+					<input type="text" name="company" id="cCom" class="NeedValid"></p></td>
 				</tr>
 				<tr>
 					<td valign="top"><label for="cTOBo">Type of Business*</label>&nbsp;</td>
 					<td>
 						<label>
-							<input type="checkbox" name="Importer" id="cTOB_0">
+							<input type="checkbox" name="Importer" class="NeedValid" id="cTOB_0">
 							Importer</label>
 						<br>
 						<label>
-							<input type="checkbox" name="Distributor" id="cTOB_1">
+							<input type="checkbox" name="Distributor"class="NeedValid" id="cTOB_1">
 							Distributor</label>
 						<br>
 						<label>
-							<input type="checkbox" name="Manufacturer" id="cTOB_2">
+							<input type="checkbox" name="Manufacturer"class="NeedValid" id="cTOB_2">
 							Manufacturer</label>
 						<br>
 						<label>
-							<input type="checkbox" name="Agent" id="cTOB_3">
+							<input type="checkbox" name="Agent"class="NeedValid" id="cTOB_3">
 							Agent</label>
 						<br>
 						<label>
-							<input type="checkbox" name="Wholesaler/Retailer" id="cTOB_4">
+							<input type="checkbox" name="Wholesaler/Retailer"class="NeedValid" id="cTOB_4">
 							Wholesaler/Retailer</label>
 						<br>
 						<label>
-							<input type="checkbox" name="OEM/ODM" id="cTOB_5">
+							<input type="checkbox" name="OEM/ODM"class="NeedValid" id="cTOB_5">
 							OEM/ODM</label>
 						<br>
 						<label>
-							<input type="checkbox" name="Trading Company" id="cTOB_6">
+							<input type="checkbox" name="Trading Company"class="NeedValid" id="cTOB_6">
 							Trading Company</label>
 						<br>
 						<label>
-							<input type="checkbox" name="Others" id="cTOB_7">
+							<input type="checkbox" name="Others"class="NeedValid" id="cTOB_7">
 							Others,</label><br>
 						
-						<input type="text" name="others_value" id="cTOBo" style="width:205px;">
+						<input type="text" name="others_value"class="NeedValid" id="cTOBo" style="width:205px;">
 						<br>
 					</td>
 				</tr>
@@ -254,7 +280,7 @@ padding-top: 10px;
 				<tr>
 					<td><label for="cct">Country*</label>&nbsp;</td>
 					<td><p>
-						<select name="country" id="cct" style="background:#fff; color:#000; width: 205px; ">
+						<select name="country" id="cct" class="NeedValid" style="background:#fff; color:#000; width: 205px; ">
                                 <option value="" selected="selected">select a country</option>
                                 <option value="Albania">Albania</option>
                                 <option value="Algeria">Algeria</option>
@@ -509,7 +535,7 @@ padding-top: 10px;
 				<tr>
 					<td><label for="cemail">E-Mail*</label>&nbsp;</td>
 					<td><p>
-					<input type="text" name="member_email" id="cemail"></p></td>
+					<input type="text" name="member_email" class="NeedValid" id="cemail"></p></td>
 				</tr>
 				<tr>
 					<td><label for="cweb">Website</label>&nbsp;</td>
@@ -530,12 +556,13 @@ padding-top: 10px;
 				<tr>
 					<td valign="top"><label for="ccomt">Comment*</label>&nbsp;</td>
 					<td><p>
-					<textarea name="comment" id="ccomt"></textarea></p></td>
+					<textarea name="comment" class="NeedValid" id="ccomt"></textarea></p></td>
 				</tr>
 				<tr>
+				<p id="validMess" style="display:none;">Заполните обязательные поля!</p>
 					<td>&nbsp;</td>
 					<td>
-						<input type="button"onclick="sendEmail()" value="Submit" class="bt-std-c" style="float:left;color: rgb(56,87,35);background-color: white; border: 1px solid rgb(56,87,35);font-size:18px;font-family:Aria; "></div>
+						<input type="button"onclick="valid()" value="Submit" class="bt-std-c" style="float:left;color: rgb(56,87,35);background-color: white; border: 1px solid rgb(56,87,35);font-size:18px;font-family:Aria; "></div>
 						<a class="bt-std-e" style="float:left; margin-left:10px;" href="javascript:document.contact_form.reset();">Reset</a></td>
 				</tr>
 			</tbody></table></form>
