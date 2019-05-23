@@ -24,9 +24,14 @@
 		{ countNotValidField++;
 		$("#textGen")[0].classList.add('notValid')
 		}
+		var martop=18;
 		if(country=$("#cct option:selected").text()=="select a country") countNotValidField++;
 		else $("#cct option:selected").classList.remove('notValid');
-		if(countNotValidField>0){validMess[0].style.cssText = "display:block;margin-top: -30px;margin-left: 18%; position: inherit";
+		if(countNotValidField>0){
+		if(document.documentElement.clientWidth<1300){
+		 martop=28;
+		}
+		validMess[0].style.cssText = "display:block;margin-top: -30px;margin-left:"+martop+"%; position: inherit";
 		  document.forms["contact_form"].style.cssText="margin-top: 25px;";}
 		else{
 		sendEmail();
@@ -80,9 +85,61 @@
 		
 			
     }
-    
 	</script>
 	<style>
+	@media (min-width: 1300px) { 
+  #images {top: 0!important;} 
+}
+@media screen and (max-device-width:480px)
+{
+	.if-news-table
+	{
+		margin-left:0!important;
+		top: 10px!important;
+		margin-top: 28px!important;
+	}
+	.text_box
+	{
+		font-size: 27px!important;
+	}
+	#images
+	{ 
+		height: 74px!important;
+		left: 3%!important;
+		top: 4%!important;
+	}
+	ul.navs 
+	{
+		    width: 100%!important;
+			height: 38px!important;
+		
+	}
+	li
+	{
+		width:73px!important;
+	}
+	ul.navs li
+	{
+		display: table-cell!important;
+	}
+	#content
+	{
+		width: 100%!important;
+		font-size: 20px!important;
+	}
+	div div
+	{
+		margin-left: 29%!important;
+	}
+	input[type="text"], textarea, select 
+	{
+		width: 155px!important;
+	}
+	#form
+	{
+		margin-left: 2%!important;
+	}
+}
 .header_img{ 
 
        height: 120px;
@@ -188,15 +245,14 @@ padding-top: 10px;
 </head>
 <body style="margin:0">
 <header>
-<div class="header_img"><div class="text_box"><img style="height: 115px;left: 3%; top: 1%; position: absolute; padding-right: 25px;" src="img/header_pic_oceanic.png">Oceanic Trading (Asia) Limited</div></div>
+<div class="header_img"><div class="text_box"><img id="images"style="height: 115px;left: 3%; top: 1%; position: absolute; padding-right: 25px;" src="img/header_pic_oceanic.png">Oceanic Trading (Asia) Limited</div></div>
 
 
 
 </header>
-
 <div id="content">
 <ul class="navs">
-<li class="navs"><a href="indexocean.html">Main page</a></li>
+<li class="navs"><a href="indexocean.html">Main&nbsp;page</a></li>
 <li class="navs"><a href="pricesocean.html">Prices</a></li>
 <li class="navs"><a href="productocean.html">Products</a></li>
 <li class="navs"><a href="servicesocean.html">Services</a></li>
@@ -205,15 +261,20 @@ padding-top: 10px;
 <div style="margin-bottom: 2%;margin-left: 20%;margin-top: 2%;">OCEANIC TRADING (ASIA) LTD.</div>
 <div style="margin-left: 20%;">RM 119, 1/F., FONDA INDUSTRIAL BUILDING, 3739 AU PUI WAN STREET,<br> FO TAN, SHATIN, N.T., HONG KONG</div>
 <br>
+
 <div style="margin-left: 20%;">Phone number +852XXXXXXXX</div> <br>
-<div style="margin-left: 20%;">Quote request form :
+
+<div style="margin-left: 20%;" id="form">Quote request form :
 <p id="validMess" style="display:none;position: inherit; ">Fill in required fields!</p>
 <form name="contact_form" >
 
 <table class="if-news-table" style="position:inherit; margin-top:-30px;margin-left: 220px;">
+
 				<tbody>
 				<tr>
-					<td width="170"><label for="cname">Full Name*</label></td>
+					<td width="170"><label for="cname">Full Name*</label>
+
+				</td>
 					<td width="443"><input type="text" name="name" id="cname" class="NeedValid"></td>
 				</tr>
 				<tr>
@@ -556,7 +617,7 @@ padding-top: 10px;
 					<td><label for="cphone">Phone Number</label>
 					*&nbsp;</td>
 					<td><p>
-					<input type="text" name="tel" id="cphone"></p></td>
+					<input type="text" name="tel"class="NeedValid"  id="cphone"></p></td>
 				</tr>
 				<tr>
 					<td><label for="cfax">Fax Number</label>&nbsp;</td>
