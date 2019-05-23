@@ -26,7 +26,11 @@
 		}
 		if(country=$("#cct option:selected").text()=="select a country") countNotValidField++;
 		else $("#cct option:selected").classList.remove('notValid');
-		if(countNotValidField>0)validMess[0].style.cssText = "display:block";
+		if(countNotValidField>0){validMess[0].style.cssText = "display:block;margin-top: -30px;margin-left: 18%; position: inherit";
+		  document.forms["contact_form"].style.cssText="margin-top: 25px;";}
+		else{
+		sendEmail();
+		}
 		
 		
 	}
@@ -70,6 +74,11 @@
             "smtp.gmail.com",
             "oceanictradingrus@gmail.com",
             "gPNam7@Wg");
+			document.forms["contact_form"].style.cssText = "display:none";
+			var validMess=$("#thnks");
+			validMess[0].style.cssText = "display:block";
+		
+			
     }
     
 	</script>
@@ -198,6 +207,7 @@ padding-top: 10px;
 <br>
 <div style="margin-left: 20%;">Phone number +852XXXXXXXX</div> <br>
 <div style="margin-left: 20%;">Quote request form :
+<p id="validMess" style="display:none;position: inherit; ">Fill in required fields!</p>
 <form name="contact_form" >
 
 <table class="if-news-table" style="position:inherit; margin-top:-30px;margin-left: 220px;">
@@ -559,13 +569,14 @@ padding-top: 10px;
 					<textarea name="comment" class="NeedValid" id="ccomt"></textarea></p></td>
 				</tr>
 				<tr>
-				<p id="validMess" style="display:none;">Заполните обязательные поля!</p>
+				
 					<td>&nbsp;</td>
 					<td>
 						<input type="button"onclick="valid()" value="Submit" class="bt-std-c" style="float:left;color: rgb(56,87,35);background-color: white; border: 1px solid rgb(56,87,35);font-size:18px;font-family:Aria; "></div>
 						<a class="bt-std-e" style="float:left; margin-left:10px;" href="javascript:document.contact_form.reset();">Reset</a></td>
 				</tr>
 			</tbody></table></form>
+			<p id="thnks" style="display:none;">Thank!</p>
 </div>
 
 
