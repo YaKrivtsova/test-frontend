@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="style/style.css">
+	<script src="js/jquery-3.3.1.min.js"></script>
+    <title>Blog by KYV</title>
+	<style>
+
+	 header a{
+         color: white;
+         text-decoration: none;
+         font-size: 2em;
+         margin-left: 1%;
+     }
+     #content{
+        margin-left: 1%;
+        margin-top: 1%;
+        font-family: general; 
+        font-size: 1.5em;
+     }
+     span{
+        color:brown;
+        margin: 0 5px;
+     }
+     .click{
+        cursor: pointer;
+     }
+	</style>
+</head>
+<body style="background-color:#f3efe9; margin:0px">
+<header>
+   <a class="header" href="firstPage.html" >YaSova</a>
+   <a class="header" href="procrastinatordiary.html"style="font-size: 1em; float:right; margin-right:1%; margin-top: 1em;">Дневник прокрастинатора</a>
+</header>
+<div id="content">
+    <div id="allPost"></div>
+   <p><span class="newPost" id="21.03.2020">Запись от 21.03.2020</span><br>
+    <span>Как вышло, что я решила вести дневник?</span>
+    Все очень просто. Я в изоляции, мне хочется с кем-то поговорить, обсудить свои мысли и желания.<br>
+    <span>Почему именно дневник прокрастинатора?</span> А какая самая большая проблема человека? Прокрастинация или более простым языком лень. 
+    Ведь большая часть людей только мечтают о чем-то, но ничего не делают для того, чтобы мечта стала целью. И я такая же. Мечтаю о том, о сем, а сама в игрушки на телефоне рублюсь.
+    А сейчас у меня есть уникальная возможность, перестать прокрастинировать, научить себя делать, а не придаваться мечтам.<br>
+    <span>И как ты будешь бороться с прокрастинацией?</span>Есть куча способов. Я просто буду пробовать каждый. <br>
+Для начала я опробую способ избавление от отвлекающих вещей.
+Для меня это:<br>
+-Прослушивание музыки<br>
+-Игрушка на телефоне<br>
+-Инстаграм<br>
+-Сериалы<br>
+Сейчас мой телефон чист от всех игрушек (хотя у меня и была-то одна). Так что шаг сделан. Вам может показаться, что это вообще не похоже на шаг.
+Но в деле с прокрастинацией спешить не стоит. Ведь наш организ вообще не хочется, чтобы мы тратили лишнюю энергию да и вообще что-то делали, кроме поедания еды. Остальное опционально, если это приятно и не надо почти ничего делать.
+<br>От остальных отвлекающих вещей избавиться мне поможет моя сила воли. Иногда мне кажется, будто она отсутствует во мне, но недавний эксперемент по отказу от сахара показал, что с ней все в норме, так что пока, попробуем подружиться с силой воли.
+<br>Ну и главный шаг, это заявить об завершении прокрастинации во всеуслышанье. Возможно этот сайт никто и никогда и не увидит, но я уже сделала мои мысли достоянием интернета. Да и планирую писать о борьбе постоянно. Так что посмотри, ведь главное в этом деле начать, а там посмотрим как жизнь повернется.
+</p>
+<p><span class="newPost" id="22.03.2020">Запись от 22.03.2020</span><br></p>
+</div>
+
+</body>
+</html>
+<script>
+    var allPost=document.getElementsByClassName("newPost");
+    var menu=document.getElementById("allPost");
+    for(var i=0;allPost.length>i;i++){
+        var postId=allPost[i].id;
+        $(document.getElementById(postId)).parent()[0].style.display='none';
+        text='<div class="click" onclick="showPost(\''+allPost[i].id+'\')">'+allPost[i].innerHTML+'</div>';
+       menu.innerHTML+=text ;
+    };
+    function showPost(postId){
+        var block="";
+        if($(document.getElementById(postId)).parent()[0].style.display=='block'){
+            block="none";
+        }
+        else{
+            block="block"
+        }
+        $(document.getElementById(postId)).parent()[0].style.display=block;
+    }
+</script>

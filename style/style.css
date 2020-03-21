@@ -2,11 +2,12 @@
 	 height:45px;
 	}
 	header{
-	height:55px;
+	height:2%;
 	width:100%;
-	background-color: #e8d4cb;
+	background-color: #99bdac;
+	font-family: type; 
 	}
-	
+
 .wrapper,.wrapper2 {
   position: absolute;
   top: 40%;
@@ -17,8 +18,12 @@
   height: 175px;
 }
 @font-face {
-    font-family: Clarisa; 
-    src: url(Clarissa.ttf); /* ֿףעü ך פאיכף סמ רנטפעמל */
+    font-family: type; 
+    src: url(type.ttf); 
+   }
+   @font-face {
+    font-family: general; 
+    src: url(general.ttf); 
    }
 .wave {
   color: black;
